@@ -13,8 +13,13 @@ export default function MerchantSelect() {
     refetchInterval: false,
   });
 
-  // ✅ Normalize data (IMPORTANT FIX)
-  const merchants = data?.results || data || [];
+  // ✅ SAFELY normalize data (handles all cases)
+  let merchants = [];
+  if (Array.isArray(data)) {
+    merchants = data;
+  } else if (data && Array.isArray(data.results)) {
+    merchants = data.results;
+  }
 
   return (
     <div className="min-h-screen bg-[#050810] flex flex-col items-center justify-center px-4">
@@ -67,16 +72,27 @@ export default function MerchantSelect() {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold bg-blue-600">
-                    {m.name?.charAt(0)}
+                    {m?.name?.charAt(0) || "M"}
                   </div>
                   <div className="text-left">
-                    <div className="text-white font-semibold text-sm">{m.name}</div>
-                    <div className="text-slate-500 text-xs">{m.email}</div>
+                    <div className="text-white font-semibold text-sm">
+                      {m?.name || "Unknown"}
+                    </div>
+                    <div className="text-slate-500 text-xs">
+                      {m?.email || "No email"}
+                    </div>
                   </div>
                 </div>
                 <ArrowRight size={16} className="text-slate-500" />
               </button>
             ))}
+          </div>
+        )}
+
+        {/* ✅ Empty State */}
+        {!isLoading && !error && merchants.length === 0 && (
+          <div className="text-center text-slate-500 text-sm mt-6">
+            No merchants found
           </div>
         )}
 
