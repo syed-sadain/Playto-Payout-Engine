@@ -6,11 +6,16 @@ def home(request):
     return JsonResponse({"message": "Payout Engine API is running 🚀"})
 
 def health_check(request):
-    return JsonResponse({"status": "ok", "service": "playto-payout-engine"})
+    return JsonResponse({
+        "status": "ok",
+        "service": "playto-payout-engine"
+    })
 
 urlpatterns = [
-    path("", home),                      # ✅ root URL
-    path("admin/", admin.site.urls),     # ✅ admin panel
-    path("health/", health_check),       # ✅ health check
-    path("merchants/", include("payouts.urls")),  # ✅ API routes
+    path("", home),                      # root
+    path("admin/", admin.site.urls),     # admin panel
+    path("health/", health_check),       # health check
+
+    # ✅ FIXED: correct API versioning
+    path("api/v1/", include("payouts.urls")),
 ]
