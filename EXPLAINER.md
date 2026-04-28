@@ -344,7 +344,7 @@ The fix is two changes: add `select_for_update()` so PostgreSQL serialises the c
 
 **`select_for_update(skip_locked=True)` in the sweeper.** Multiple beat workers or overlapping sweeper runs should not pile up on the same stale payout. `skip_locked=True` means "if this row is locked by another transaction, skip it" — exactly the right behavior for a background sweeper.
 
-##### Problems Faced During Development
+# Problems Faced During Development
 ________________________________________
 1. PostgreSQL Password Authentication Failed
 
