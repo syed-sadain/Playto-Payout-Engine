@@ -1,4 +1,4 @@
-# Playto Payout Engine
+# 💰 Playto Payout Engine
 
 > Cross-border payment payout infrastructure for Indian merchants — built for the Playto Founding Engineer challenge.
 
