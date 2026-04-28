@@ -12,5 +12,5 @@ urlpatterns = [
     path("", home),                      # ✅ root URL
     path("admin/", admin.site.urls),     # ✅ admin panel
     path("health/", health_check),       # ✅ health check
-    path("api/v1/merchants/", include("payouts.urls")),  # ✅ API routes
+    path("merchants/", include("payouts.urls")),  # ✅ API routes
 ]
