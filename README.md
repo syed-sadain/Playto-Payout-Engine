@@ -1,15 +1,11 @@
 # 💰 Playto Payout Engine
 
-> Cross-border payment payout infrastructure for Indian merchants — built for the Playto Founding Engineer challenge.
+# Cross-border payment payout infrastructure for Indian merchants — built for the Playto Founding Engineer challenge.
 
-**Stack:** Django 4.2 · DRF · PostgreSQL · Celery + Redis · React 18 · Tailwind CSS · Docker
-# Backend Deployement link: https://playto-payout-engine-3.onrender.com
-# Frontend Deployment link: https://playto-payout-engine-4.onrender.com
----
+# Stack: Django 4.2 · DRF · PostgreSQL · Celery + Redis · React 18 · Tailwind CSS · Docker
 
-## Architecture Overview
+# Architecture Overview
 
-```
 ┌─────────────┐     POST /api/v1/payouts      ┌─────────────────────┐
 │  React SPA  │ ──────────────────────────────► │   Django DRF API    │
 │  (Port 3000)│ ◄────────────────────────────── │   (Port 8000)       │
