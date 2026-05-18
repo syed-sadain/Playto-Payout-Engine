@@ -5,6 +5,7 @@
 # Stack: Django 4.2 · DRF · PostgreSQL · Celery + Redis · React 18 · Tailwind CSS · Docker
 
 # Architecture Overview
+'''
 
 ┌─────────────┐     POST /api/v1/payouts      ┌─────────────────────┐
 │  React SPA  │ ──────────────────────────────► │   Django DRF API    │
