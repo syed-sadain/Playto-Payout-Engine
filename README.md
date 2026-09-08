@@ -2,7 +2,7 @@
 
 # Cross-border payment payout infrastructure for Indian merchants — built for the Playto Founding Engineer challenge.
 
-# Stack: Django 4.2 · DRF · PostgreSQL · Celery + Redis · React 18 · Tailwind CSS · Docker
+# Stack: Django · PostgreSQL · Celery + Redis · React.js · Next.js · Tailwind CSS · Docker
 
 # Architecture Overview
 '''
